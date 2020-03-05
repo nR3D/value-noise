@@ -2,7 +2,9 @@
 
 Generate random value noise images, using different kinds of interpolation (bilinear, bicubic, and smoothstep). 
 
-The graphical interface is based on Qt (v. 5.12), yet the value noise implementation (located in `src`) is independent of its GUI, hence the latter can be rewritten with any other graphic library.
+The graphical interface is based on Qt (v. 5.12), yet the value noise implementation (located in `src`) is independent of its GUI, hence it can be rewritten with any other graphic library.
+
+!(screenSample)[images/screenSample.png]
 
 ## Interpolation
 
