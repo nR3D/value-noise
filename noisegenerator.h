@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPen>
 #include <QPainter>
+#include <QFileDialog>
 #include "src/valueNoise.h"
 #include "src/bicubicNoise.h"
 #include "src/bilinearNoise.h"
@@ -24,6 +25,7 @@ public:
 public slots:
     void generate() const;
     void stateScale() const;
+    void saveAs() const;
 
 private:
     Ui::NoiseGenerator *ui;

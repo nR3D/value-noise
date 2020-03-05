@@ -18,6 +18,9 @@ NoiseGenerator::NoiseGenerator(QWidget *parent) :
     // connect adaptive scale
     connect(ui->adaptiveCheck, SIGNAL(stateChanged(int)), this, SLOT(stateScale()));
 
+    // connect SaveAs button
+    connect(ui->saveButton, SIGNAL(clicked()), this, SLOT(saveAs()));
+
     // initial generation
     generate();
 }
@@ -74,6 +77,13 @@ void NoiseGenerator::stateScale() const
         ui->scaleLabel->setEnabled(true);
     }
     generate();
+}
+
+void NoiseGenerator::saveAs() const
+{
+    QString fileName = QFileDialog::getSaveFileName(nullptr, tr("Select file"), "", tr("*.png *.jpg *.bmp *.tiff"));
+    if(fileName != "")
+        ui->mapNoise->pixmap()->save(fileName);
 }
 
 NoiseGenerator::~NoiseGenerator()
