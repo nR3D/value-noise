@@ -26,21 +26,20 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        valuenoise.cpp \
+        noisegenerator.cpp \
 	src/valueNoise.cpp \
 	src/bicubicNoise.cpp \
 	src/bilinearNoise.cpp \
 	src/smoothstepNoise.cpp
 
 HEADERS += \
-        valuenoise.h \
+        noisegenerator.h \
 	src/valueNoise.h \
 	src/bilinearNoise.h \
 	src/bicubicNoise.h \
 	src/smoothstepNoise.h
 
-FORMS += \
-        valuenoise.ui
+FORMS += noisegenerator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

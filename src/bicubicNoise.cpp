@@ -31,7 +31,7 @@ float bicubicValueNoise(float x, float y, int anchor, float* lattice, int sizeLa
 	{
 	    vertex = anchor-1 + i%4 + sizeLattice*(i/4-1);
 	    if(i/4 > sizeLattice - anchor/sizeLattice)
-		vertex -= sizeLattice*(i/4 + (anchor-1)/sizeLattice);
+        vertex -= sizeLattice*(i/4 - sizeLattice + anchor/sizeLattice);
 	}
 	else
 	    vertex = anchor-1+i;
@@ -39,7 +39,7 @@ float bicubicValueNoise(float x, float y, int anchor, float* lattice, int sizeLa
 	    ++vertex;
 	else if(i%4==3 && divF(vertex, sizeLattice) != divF(vertex-1, sizeLattice))
 	    --vertex;
-	arr[i/4][i%4] = lattice[vertex];
+    arr[i/4][i%4] = lattice[vertex];
     }
     return bicubicInterpolation(x, y, arr);
 }
